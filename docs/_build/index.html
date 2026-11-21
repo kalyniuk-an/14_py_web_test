@@ -1,0 +1,422 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="uk" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contacts API Documentation &mdash; Contacts API 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=5a0ebc6c"></script>
+      <script src="_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Індекс" href="genindex.html" />
+    <link rel="search" title="Пошук" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="#" class="icon icon-home">
+            Contacts API
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">Contacts API Documentation</a></li>
+<li><a class="reference internal" href="#application-modules">Application Modules</a><ul>
+<li><a class="reference internal" href="#module-app.crud">CRUD Module</a><ul>
+<li><a class="reference internal" href="#app.crud.create_contact"><code class="docutils literal notranslate"><span class="pre">create_contact()</span></code></a></li>
+<li><a class="reference internal" href="#app.crud.delete_contact"><code class="docutils literal notranslate"><span class="pre">delete_contact()</span></code></a></li>
+<li><a class="reference internal" href="#app.crud.get_birthday_for_year"><code class="docutils literal notranslate"><span class="pre">get_birthday_for_year()</span></code></a></li>
+<li><a class="reference internal" href="#app.crud.get_contact"><code class="docutils literal notranslate"><span class="pre">get_contact()</span></code></a></li>
+<li><a class="reference internal" href="#app.crud.get_contacts"><code class="docutils literal notranslate"><span class="pre">get_contacts()</span></code></a></li>
+<li><a class="reference internal" href="#app.crud.get_upcoming_birthdays"><code class="docutils literal notranslate"><span class="pre">get_upcoming_birthdays()</span></code></a></li>
+<li><a class="reference internal" href="#app.crud.search_contacts"><code class="docutils literal notranslate"><span class="pre">search_contacts()</span></code></a></li>
+<li><a class="reference internal" href="#app.crud.update_contact"><code class="docutils literal notranslate"><span class="pre">update_contact()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#users-repository">Users Repository</a><ul>
+<li><a class="reference internal" href="#app.repository_users.confirm_user_email"><code class="docutils literal notranslate"><span class="pre">confirm_user_email()</span></code></a></li>
+<li><a class="reference internal" href="#app.repository_users.create_user"><code class="docutils literal notranslate"><span class="pre">create_user()</span></code></a></li>
+<li><a class="reference internal" href="#app.repository_users.get_user_by_email"><code class="docutils literal notranslate"><span class="pre">get_user_by_email()</span></code></a></li>
+<li><a class="reference internal" href="#app.repository_users.update_avatar"><code class="docutils literal notranslate"><span class="pre">update_avatar()</span></code></a></li>
+<li><a class="reference internal" href="#app.repository_users.update_token"><code class="docutils literal notranslate"><span class="pre">update_token()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-app.main">Main Module</a><ul>
+<li><a class="reference internal" href="#app.main.lifespan"><code class="docutils literal notranslate"><span class="pre">lifespan()</span></code></a></li>
+<li><a class="reference internal" href="#app.main.read_root"><code class="docutils literal notranslate"><span class="pre">read_root()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">Contacts API</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="#" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Contacts API Documentation</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="contacts-api-documentation">
+<h1>Contacts API Documentation<a class="headerlink" href="#contacts-api-documentation" title="Link to this heading"></a></h1>
+<p>Welcome to Contacts API documentation!</p>
+<p>This project provides an API for managing contacts and users.</p>
+</section>
+<section id="application-modules">
+<h1>Application Modules<a class="headerlink" href="#application-modules" title="Link to this heading"></a></h1>
+<section id="module-app.crud">
+<span id="crud-module"></span><h2>CRUD Module<a class="headerlink" href="#module-app.crud" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="app.crud.create_contact">
+<span class="sig-prename descclassname"><span class="pre">app.crud.</span></span><span class="sig-name descname"><span class="pre">create_contact</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Session</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">contact</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ContactCreate</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">user_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.crud.create_contact" title="Link to this definition"></a></dt>
+<dd><p>Create a new contact for a user.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметри<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>db</strong> (<em>Session</em>) – SQLAlchemy database session.</p></li>
+<li><p><strong>contact</strong> (<em>ContactCreate</em>) – Data for creating a contact.</p></li>
+<li><p><strong>user_id</strong> (<em>int</em>) – ID of the contact owner.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Повертає<span class="colon">:</span></dt>
+<dd class="field-even"><p>The created contact.</p>
+</dd>
+<dt class="field-odd">Тип повернення<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Contact</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="app.crud.delete_contact">
+<span class="sig-prename descclassname"><span class="pre">app.crud.</span></span><span class="sig-name descname"><span class="pre">delete_contact</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Session</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db_contact</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Contact</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.crud.delete_contact" title="Link to this definition"></a></dt>
+<dd><p>Delete a contact from the database.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметри<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>db</strong> (<em>Session</em>) – SQLAlchemy database session.</p></li>
+<li><p><strong>db_contact</strong> (<em>Contact</em>) – Contact to delete.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Повертає<span class="colon">:</span></dt>
+<dd class="field-even"><p>No value is returned.</p>
+</dd>
+<dt class="field-odd">Тип повернення<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="app.crud.get_birthday_for_year">
+<span class="sig-prename descclassname"><span class="pre">app.crud.</span></span><span class="sig-name descname"><span class="pre">get_birthday_for_year</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">birthday</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">date</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">year</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">date</span></span></span><a class="headerlink" href="#app.crud.get_birthday_for_year" title="Link to this definition"></a></dt>
+<dd><p>Return a birthday date for the specified year.</p>
+<p>Handles February 29 for years that are not leap years.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметри<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>birthday</strong> (<em>date</em>) – Original birthday.</p></li>
+<li><p><strong>year</strong> (<em>int</em>) – Target year.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Повертає<span class="colon">:</span></dt>
+<dd class="field-even"><p>Birthday adjusted to the target year.</p>
+</dd>
+<dt class="field-odd">Тип повернення<span class="colon">:</span></dt>
+<dd class="field-odd"><p>date</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="app.crud.get_contact">
+<span class="sig-prename descclassname"><span class="pre">app.crud.</span></span><span class="sig-name descname"><span class="pre">get_contact</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Session</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">contact_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">user_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.crud.get_contact" title="Link to this definition"></a></dt>
+<dd><p>Retrieve a contact by its ID for a specific user.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметри<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>db</strong> (<em>Session</em>) – SQLAlchemy database session.</p></li>
+<li><p><strong>contact_id</strong> (<em>int</em>) – ID of the contact.</p></li>
+<li><p><strong>user_id</strong> (<em>int</em>) – ID of the contact owner.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Повертає<span class="colon">:</span></dt>
+<dd class="field-even"><p>The contact if found, otherwise None.</p>
+</dd>
+<dt class="field-odd">Тип повернення<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Contact | None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="app.crud.get_contacts">
+<span class="sig-prename descclassname"><span class="pre">app.crud.</span></span><span class="sig-name descname"><span class="pre">get_contacts</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Session</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">user_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.crud.get_contacts" title="Link to this definition"></a></dt>
+<dd><p>Retrieve all contacts belonging to a specific user.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметри<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>db</strong> (<em>Session</em>) – SQLAlchemy database session.</p></li>
+<li><p><strong>user_id</strong> (<em>int</em>) – ID of the user whose contacts are retrieved.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Повертає<span class="colon">:</span></dt>
+<dd class="field-even"><p>List of contacts belonging to the user.</p>
+</dd>
+<dt class="field-odd">Тип повернення<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="app.crud.get_upcoming_birthdays">
+<span class="sig-prename descclassname"><span class="pre">app.crud.</span></span><span class="sig-name descname"><span class="pre">get_upcoming_birthdays</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Session</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">user_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.crud.get_upcoming_birthdays" title="Link to this definition"></a></dt>
+<dd><p>Retrieve contacts with birthdays within the next seven days.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметри<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>db</strong> (<em>Session</em>) – SQLAlchemy database session.</p></li>
+<li><p><strong>user_id</strong> (<em>int</em>) – ID of the user whose contacts are checked.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Повертає<span class="colon">:</span></dt>
+<dd class="field-even"><p>Contacts with upcoming birthdays.</p>
+</dd>
+<dt class="field-odd">Тип повернення<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="app.crud.search_contacts">
+<span class="sig-prename descclassname"><span class="pre">app.crud.</span></span><span class="sig-name descname"><span class="pre">search_contacts</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Session</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">query</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">user_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.crud.search_contacts" title="Link to this definition"></a></dt>
+<dd><p>Search contacts by first name, last name or email.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметри<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>db</strong> (<em>Session</em>) – SQLAlchemy database session.</p></li>
+<li><p><strong>query</strong> (<em>str</em>) – Search string.</p></li>
+<li><p><strong>user_id</strong> (<em>int</em>) – ID of the user whose contacts are searched.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Повертає<span class="colon">:</span></dt>
+<dd class="field-even"><p>List of matching contacts.</p>
+</dd>
+<dt class="field-odd">Тип повернення<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="app.crud.update_contact">
+<span class="sig-prename descclassname"><span class="pre">app.crud.</span></span><span class="sig-name descname"><span class="pre">update_contact</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Session</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db_contact</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Contact</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">contact</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ContactUpdate</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.crud.update_contact" title="Link to this definition"></a></dt>
+<dd><p>Update an existing contact.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметри<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>db</strong> (<em>Session</em>) – SQLAlchemy database session.</p></li>
+<li><p><strong>db_contact</strong> (<em>Contact</em>) – Existing database contact.</p></li>
+<li><p><strong>contact</strong> (<em>ContactUpdate</em>) – New contact data.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Повертає<span class="colon">:</span></dt>
+<dd class="field-even"><p>The updated contact.</p>
+</dd>
+<dt class="field-odd">Тип повернення<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Contact</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="users-repository">
+<h2>Users Repository<a class="headerlink" href="#users-repository" title="Link to this heading"></a></h2>
+<dl class="py function" id="module-app.repository_users">
+<dt class="sig sig-object py" id="app.repository_users.confirm_user_email">
+<span class="sig-prename descclassname"><span class="pre">app.repository_users.</span></span><span class="sig-name descname"><span class="pre">confirm_user_email</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">user</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">User</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Session</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#app.repository_users.confirm_user_email" title="Link to this definition"></a></dt>
+<dd><p>Confirm a user’s email address.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметри<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>user</strong> (<em>User</em>) – User whose email is confirmed.</p></li>
+<li><p><strong>db</strong> (<em>Session</em>) – SQLAlchemy database session.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Повертає<span class="colon">:</span></dt>
+<dd class="field-even"><p>No value is returned.</p>
+</dd>
+<dt class="field-odd">Тип повернення<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="app.repository_users.create_user">
+<span class="sig-prename descclassname"><span class="pre">app.repository_users.</span></span><span class="sig-name descname"><span class="pre">create_user</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">UserCreate</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Session</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">User</span></span></span><a class="headerlink" href="#app.repository_users.create_user" title="Link to this definition"></a></dt>
+<dd><p>Create a new user with a hashed password.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметри<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>body</strong> (<em>UserCreate</em>) – User registration data.</p></li>
+<li><p><strong>db</strong> (<em>Session</em>) – SQLAlchemy database session.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Повертає<span class="colon">:</span></dt>
+<dd class="field-even"><p>The created user.</p>
+</dd>
+<dt class="field-odd">Тип повернення<span class="colon">:</span></dt>
+<dd class="field-odd"><p>User</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="app.repository_users.get_user_by_email">
+<span class="sig-prename descclassname"><span class="pre">app.repository_users.</span></span><span class="sig-name descname"><span class="pre">get_user_by_email</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">email</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Session</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">User</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="headerlink" href="#app.repository_users.get_user_by_email" title="Link to this definition"></a></dt>
+<dd><p>Retrieve a user by email address.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметри<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>email</strong> (<em>str</em>) – Email address to search for.</p></li>
+<li><p><strong>db</strong> (<em>Session</em>) – SQLAlchemy database session.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Повертає<span class="colon">:</span></dt>
+<dd class="field-even"><p>The user if found, otherwise None.</p>
+</dd>
+<dt class="field-odd">Тип повернення<span class="colon">:</span></dt>
+<dd class="field-odd"><p>User | None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="app.repository_users.update_avatar">
+<span class="sig-prename descclassname"><span class="pre">app.repository_users.</span></span><span class="sig-name descname"><span class="pre">update_avatar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">user</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">User</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">avatar_url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Session</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">User</span></span></span><a class="headerlink" href="#app.repository_users.update_avatar" title="Link to this definition"></a></dt>
+<dd><p>Update the user’s avatar URL.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметри<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>user</strong> (<em>User</em>) – User whose avatar is updated.</p></li>
+<li><p><strong>avatar_url</strong> (<em>str</em>) – URL of the new avatar.</p></li>
+<li><p><strong>db</strong> (<em>Session</em>) – SQLAlchemy database session.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Повертає<span class="colon">:</span></dt>
+<dd class="field-even"><p>The updated user.</p>
+</dd>
+<dt class="field-odd">Тип повернення<span class="colon">:</span></dt>
+<dd class="field-odd"><p>User</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="app.repository_users.update_token">
+<span class="sig-prename descclassname"><span class="pre">app.repository_users.</span></span><span class="sig-name descname"><span class="pre">update_token</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">user</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">User</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">refresh_token</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Session</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#app.repository_users.update_token" title="Link to this definition"></a></dt>
+<dd><p>Update the refresh token for a user.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметри<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>user</strong> (<em>User</em>) – User whose token is updated.</p></li>
+<li><p><strong>refresh_token</strong> (<em>str</em><em> | </em><em>None</em>) – New refresh token or None.</p></li>
+<li><p><strong>db</strong> (<em>Session</em>) – SQLAlchemy database session.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Повертає<span class="colon">:</span></dt>
+<dd class="field-even"><p>No value is returned.</p>
+</dd>
+<dt class="field-odd">Тип повернення<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-app.main">
+<span id="main-module"></span><h2>Main Module<a class="headerlink" href="#module-app.main" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="app.main.lifespan">
+<span class="sig-prename descclassname"><span class="pre">app.main.</span></span><span class="sig-name descname"><span class="pre">lifespan</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">app</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">FastAPI</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.main.lifespan" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="app.main.read_root">
+<span class="sig-prename descclassname"><span class="pre">app.main.</span></span><span class="sig-name descname"><span class="pre">read_root</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.main.read_root" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright .</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
