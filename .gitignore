@@ -4,3 +4,7 @@ __pycache__/
 .env
 .idea/
 .vscode/
+
+htmlcov/
+.coverage
+docs/_build/
